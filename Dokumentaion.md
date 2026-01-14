@@ -23,8 +23,8 @@ Formel: $$
         $$
 
 Eingesetzt: $$
-            f = \frac{1}{2\pi\sqrt{1\cdot10^{-3}\cdot10\cdot10^{-9}}}
-            \approx 50.3\,\text{kHz}
+            f = \frac{1}{2\pi\sqrt{10\cdot10^{-3}\cdot100\cdot10^{-9}}}
+            \approx 5.03\,\text{kHz}
             $$
 
 ### Schritt 2
@@ -68,7 +68,7 @@ Erklären Sie den Zusammenhang, den Sie beobachten:
 
 ---
 
-1. Mit zunehmendem Widerstand wird der Resonanz-Peak niedriger. Der maximale Strom bzw. die maximale Amplitude nimmt also ab, da der     Widerstand mehr Energie im Schwingkreis dämpft.
+1. Mit zunehmendem Widerstand wird der Resonanz-Peak niedriger. Der maximale Strom bzw. die maximale Amplitude nimmt also ab, da der Widerstand mehr Energie im Schwingkreis dämpft.
 2. Mit zunehmendem Widerstand wird der Resonanz-Peak breiter. Die Resonanz ist weniger stark ausgeprägt und verteilt sich über einen größeren Frequenzbereich.
 3. Ein kleiner Widerstand führt zu einer hohen Güte Q und einer schmalen Bandbreite, da die Schaltung nur in einem engen Frequenzbereich stark schwingt.
 Mit steigendem Widerstand sinkt die Güte Q, während die Bandbreite zunimmt, weil die Dämpfung größer wird und die Resonanz weniger scharf ist.
@@ -216,3 +216,71 @@ Dadurch bleibt am Ausgang im Wesentlichen nur die Grundschwingung erhalten, was 
 ---
 
 # Aufgabe 6
+
+### Schritt 1
+Stellen Sie die Quelle auf "Sine" (Sinus), 5V Amplitude.
+
+1. Stellen Sie die Quelle auf "Sine" (Sinus), 5V Amplitude.
+2. Führen Sie eine AC-Analyse ("Frequency"-Plot) am Ausgang (V) durch.
+3. Finden Sie die Frequenz, bei der die Schaltung ihre stärkste Resonanz (größte Verstärkung) zeigt.
+
+---
+
+2. Bei sinusförmiger Anregung zeigt die Schaltung eine deutliche Resonanzüberhöhung bei einer bestimmten Frequenz.
+3. Die maximale Verstärkung tritt bei etwa 3,56MHz auf
+
+### Schritt 2
+
+1. Ändern Sie die Quelle zu einer "Square Wave" (Rechteck), 5V Amplitude.
+2. Stellen Sie die Grundfrequenz der Rechteckwelle auf 1,18 MHz ein. (Dies ist 1/3 der Resonanzfrequenz aus Schritt 1).
+3. Betrachten Sie den Eingang und den Ausgang (V) im Zeitbereich (Scope).
+4. Betrachten Sie den Eingang und den Ausgang (V) im Frequenzbereich (FFT / "Frequency").
+
+---
+
+### Scrhitt 3
+1. Ändern Sie die Grundfrequenz der Rechteckwelle auf 712 kHz. (Dies ist 1/5 der Resonanzfrequenz).
+2. Beobachten Sie erneut das Spektrum am Ausgang.
+
+### Auswertung
+1. **Zeitbereich**: Vergleichen Sie das Eingangs- und Ausgangssignal. Welche Form hat das Ausgangssignal? Welche Frequenz hat es (grob gemessen)?
+
+2. **Frequenzbereich (Eingang)**: Beschreiben Sie das Spektrum der Rechteckwelle, das Sie sehen. Welche Harmonischen sind vorhanden (1., 3., 5. ...)?
+3. Frequenzbereich (Ausgang): Beschreiben Sie das Spektrum am Ausgang. Was ist mit der Grundschwingung (1,18 MHz) passiert? Was ist mit der 3. Harmonischen (3,56 MHz) passiert?
+4. Erklärung: Fassen Sie zusammen, was der Filter mit dem Rechtecksignal gemacht hat und warum das Ausgangssignal so aussieht, wie es aussieht.
+
+---
+
+1. **Zeitbereich**
+
+Eingangssignal:
+- Rechteckwelle  
+- Amplitude: 5 V  
+- Grundfrequenz: 1,18 MHz
+
+Ausgangssignal:
+- Kein Rechtecksignal mehr, nahezu sinusförmig
+- Frequenz: ca. 3,56 MHz
+- Amplitude deutlich kleiner als Eingang
+
+Erklärung: 
+- Das Filter unterdrückt die Grundfrequenz der Rechteckwelle  
+- Verstärkt eine höhere Frequenzkomponente nahe der Resonanzfrequenz
+
+2. **Frequenzbereich (Eingang)**
+Im Frequenzspektrum des Eingangssignals sind folgende Frequenzanteile sichtbar:
+Grundschwingung bei **f₁ = 1,18 MHz** 
+Ungerade Harmonische:  
+**3. Harmonische:** 3,56 MHz  
+**5. Harmonische:** ca. 5,9 MHz  
+weitere ungerade Harmonische mit abnehmender Amplitude Gerade Harmonische sind nicht vorhanden. Das Spektrum entspricht der Fourier-Zerlegung einer idealen Rechteckwelle.
+
+ 3. **Frequenzbereich  (Ausgang)** 
+ Im Ausgangsspektrum zeigt sich folgendes Verhalten:
+  Die Grundschwingung bei 1,18 MHz ist stark gedämpft * Die **3. Harmonische** bei 3,56 MHz ist dominant * Höhere Harmonische (5., 7., …) sind stark abgeschwächt. Das Ausgangsspektrum wird fast komplett von der Resonanzfrequenz des Filters bestimmt.
+
+   4. **Erklärung / Zusammenfassung** 
+Der Filter lässt nur die Harmonische bei 3,56 MHz passieren → Ausgang fast sinusförmig.
+
+
+### Ende
